@@ -2,16 +2,15 @@ import React from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import useAuth from "../../../hooks/useAuth";
-import "./Banner.css";
+import useAuth from "../hooks/useAuth";
 
-const Banner = () => {
+const Header = () => {
    const { user, logOut } = useAuth();
    return (
-      <div className="top-banner">
+      <div>
          <Navbar
             className=""
-            bg=""
+            bg="dark"
             variant="dark"
             sticky="top"
             collapseOnSelect
@@ -86,29 +85,8 @@ const Banner = () => {
                </Navbar.Collapse>
             </Container>
          </Navbar>
-         <section className="container">
-            <div className="row">
-               <div
-                  className="col-lg-4 col-md-4 col-12 text-white"
-                  style={{ marginTop: "250px" }}
-               >
-                  <h1 style={{ fontSize: "60px" }}>Travelious</h1>
-                  <p className="mb-4" style={{ fontSize: "20px" }}>
-                     Pack your bags. We’re going on vacation!
-                  </p>
-                  <Link
-                     as={HashLink}
-                     to="/home#services"
-                     className="read-more text-decoration-none my-5"
-                  >
-                     {" "}
-                     <span>see more</span>
-                  </Link>
-               </div>
-            </div>
-         </section>
       </div>
    );
 };
 
-export default Banner;
+export default Header;

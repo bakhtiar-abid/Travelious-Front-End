@@ -5,13 +5,16 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Home from "./Pages/Home/Home/Home";
 import Login from "./Login/Login";
+import MyOrders from "./Pages/Home/MyOrders/MyOrders";
+import PrivateRoute from "./Login/PrivateRoute/PrivateRoute";
+import ManageOrders from "./Pages/Home/ManageOrders/ManageOrders";
+import AddService from "./Pages/Home/AddAService/AddService";
 
 function App() {
    return (
       <div className="App">
          <AuthProvider>
             <Router>
-               {/* <Header></Header> */}
                <Switch>
                   <Route exact path="/">
                      <Home></Home>
@@ -23,16 +26,18 @@ function App() {
                   <Route path="/login">
                      <Login></Login>
                   </Route>
-                  {/* <PrivateRoute path="/about">
-                     <AboutUs></AboutUs>
-                  </PrivateRoute>
-                  <PrivateRoute path="/contact">
-                     <ContactUs></ContactUs>
-                  </PrivateRoute>
-                  <PrivateRoute path="/service/:serviceId">
-                     <ServiceDetail></ServiceDetail>
-                  </PrivateRoute>
-                  <Route path="*">
+
+                  <Route path="/myorders">
+                     <MyOrders></MyOrders>
+                  </Route>
+
+                  <Route path="/manageorders">
+                     <ManageOrders></ManageOrders>
+                  </Route>
+                  <Route path="/addservice">
+                     <AddService></AddService>
+                  </Route>
+                  {/* <Route path="*">
                      <NotFound></NotFound>
                   </Route> */}
                </Switch>
