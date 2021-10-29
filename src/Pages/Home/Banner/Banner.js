@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import useAuth from "../../../hooks/useAuth";
 import "./Banner.css";
 
@@ -83,6 +84,14 @@ const Banner = () => {
                   <p style={{ fontSize: "20px" }}>
                      Pack your bags. We’re going on vacation!
                   </p>
+                  <Link
+                     as={HashLink}
+                     to="/home#services"
+                     className="read-more text-decoration-none my-5"
+                  >
+                     {" "}
+                     <span>read more</span>
+                  </Link>
                </div>
             </div>
          </section>

@@ -14,40 +14,11 @@ body {
    position: relative;
 }
 
-/* .hero-text {
-   text-align: center;
-   position: absolute;
-   top: 50%;
-   right: 55%;
-   transform: translate(-50%, -50%);
-   color: white;
-   padding: 35px;
-   border-radius: 20px;
-}
-
-.hero-text button {
-   border: none;
-   outline: 0;
-   display: inline-block;
-   padding: 10px 25px;
-   color: black;
-   background-color: #ddd;
-   text-align: center;
-   cursor: pointer;
-}
-
-.hero-text button:hover {
-   background-color: #555;
-   color: white;
-}
-
-.header-button {
-   color: rgb(0, 89, 141) !important;
-}
-.header-button:hover {
-   color: white !important;
-}
-
-.log-in a {
+.read-more span {
    text-decoration: none;
-} */
+   border-radius: 10px;
+   background-image: linear-gradient(135deg, #478ac9, #24d9ea);
+   margin: 50px auto 60px 0;
+   padding: 14px 32px 15px;
+   color: white;
+}
