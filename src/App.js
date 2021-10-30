@@ -30,7 +30,7 @@ function App() {
                      <MyPlans></MyPlans>
                   </PrivateRoute>
 
-                  <PrivateRoute path="/manageplans">
+                  <PrivateRoute path="/manageplans/">
                      <ManagePlans></ManagePlans>
                   </PrivateRoute>
                   <PrivateRoute path="/addplan">

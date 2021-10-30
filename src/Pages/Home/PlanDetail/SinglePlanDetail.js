@@ -32,7 +32,7 @@ const SinglePlanDetail = () => {
          .then((res) => {
             if (res.data.insertedId) {
                swal(
-                  "Good job!",
+                  "Booked!",
                   "You have sucessfully added your plan!",
                   "success"
                );
@@ -43,7 +43,7 @@ const SinglePlanDetail = () => {
       reset();
    };
 
-   console.log(singleItem);
+   // console.log(singleItem);
    useEffect(() => {
       fetch(`https://vast-depths-37710.herokuapp.com/plan/${planId}`)
          .then((res) => res.json())
