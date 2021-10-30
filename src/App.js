@@ -1,14 +1,13 @@
 import "./App.css";
-
 import AuthProvider from "./contexts/AuthProvider";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 import Home from "./Pages/Home/Home/Home";
 import Login from "./Login/Login";
-import MyOrders from "./Pages/Home/MyOrders/MyOrders";
 import PrivateRoute from "./Login/PrivateRoute/PrivateRoute";
-import ManageOrders from "./Pages/Home/ManageOrders/ManageOrders";
-import AddService from "./Pages/Home/AddAService/AddService";
+import MyPlans from "./Pages/Home/MyPlans/MyPlans";
+import ManagePlans from "./Pages/Home/ManagePlans/ManagePlans";
+import AddPlan from "./Pages/Home/AddAPlan/AddPlan";
+import SinglePlanDetail from "./Pages/Home/PlanDetail/SinglePlanDetail";
 
 function App() {
    return (
@@ -27,15 +26,18 @@ function App() {
                      <Login></Login>
                   </Route>
 
-                  <PrivateRoute path="/myorders">
-                     <MyOrders></MyOrders>
+                  <PrivateRoute path="/myplans">
+                     <MyPlans></MyPlans>
                   </PrivateRoute>
 
-                  <PrivateRoute path="/manageorders">
-                     <ManageOrders></ManageOrders>
+                  <PrivateRoute path="/manageplans">
+                     <ManagePlans></ManagePlans>
                   </PrivateRoute>
-                  <PrivateRoute path="/addservice">
-                     <AddService></AddService>
+                  <PrivateRoute path="/addplan">
+                     <AddPlan></AddPlan>
+                  </PrivateRoute>
+                  <PrivateRoute path="/plan/:planId">
+                     <SinglePlanDetail></SinglePlanDetail>
                   </PrivateRoute>
                   {/* <Route path="*">
                      <NotFound></NotFound>

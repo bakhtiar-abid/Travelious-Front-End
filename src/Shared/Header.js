@@ -26,10 +26,10 @@ const Header = () => {
                   {user?.displayName ? (
                      <Nav.Link
                         as={HashLink}
-                        to="/myorders"
+                        to="/myplans"
                         className="text-white"
                      >
-                        My Orders
+                        My Plans
                      </Nav.Link>
                   ) : (
                      ""
@@ -37,10 +37,10 @@ const Header = () => {
                   {user?.displayName ? (
                      <Nav.Link
                         as={HashLink}
-                        to="/manageorders"
+                        to="/manageplans"
                         className="text-white"
                      >
-                        Manage All Orders
+                        Manage All Plans
                      </Nav.Link>
                   ) : (
                      ""
@@ -48,10 +48,10 @@ const Header = () => {
                   {user?.displayName ? (
                      <Nav.Link
                         as={HashLink}
-                        to="/addservice"
+                        to="/addplan"
                         className="text-white"
                      >
-                        Add A Service
+                        Add A Plan
                      </Nav.Link>
                   ) : (
                      ""

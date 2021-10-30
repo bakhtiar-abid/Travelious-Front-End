@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "../../../Shared/Header";
 
-const ManageOrders = () => {
+const ManagePlans = () => {
    return (
       <div>
          <Header></Header>
-         <h1>I am from Manage Orders</h1>
+         <h1>I am from Manage Plans</h1>
       </div>
    );
 };
 
-export default ManageOrders;
+export default ManagePlans;

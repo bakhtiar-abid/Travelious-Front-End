@@ -1,8 +1,9 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-const Service = ({ services }) => {
-   const { name, description, price, img } = services;
+const Plan = ({ places }) => {
+   const { _id, name, description, price, img } = places;
    return (
       <div>
          <div className="col">
@@ -14,7 +15,9 @@ const Service = ({ services }) => {
                </div>
                <div className="py-2">
                   <div>
-                     <Button className="btn btn-warning">Book Now </Button>
+                     <Link to={`/plan/${_id}`}>
+                        <Button className="btn btn-warning">Book Now </Button>
+                     </Link>
                   </div>
                </div>
             </div>
@@ -23,4 +26,4 @@ const Service = ({ services }) => {
    );
 };
 
-export default Service;
+export default Plan;

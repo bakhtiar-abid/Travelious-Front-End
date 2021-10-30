@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "../../../Shared/Header";
 
-const AddService = () => {
+const MyPlans = () => {
    return (
       <div>
          <Header></Header>
-         <h1>Please Add A service</h1>
+         <h1>Hello From My All plans</h1>
       </div>
    );
 };
 
-export default AddService;
+export default MyPlans;

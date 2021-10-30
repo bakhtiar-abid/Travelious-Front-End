@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
-import Service from "../Service/Service";
+import Plan from "../Plan/Plan";
 
-const Services = () => {
-   const [services, setServices] = useState([]);
-   console.log(services);
+const Plans = () => {
+   const [places, setPlaces] = useState([]);
 
    useEffect(() => {
-      fetch("https://vast-depths-37710.herokuapp.com/allservices")
+      fetch("https://vast-depths-37710.herokuapp.com/allplans")
          .then((res) => res.json())
-         .then((data) => setServices(data));
+         .then((data) => setPlaces(data));
    }, []);
    return (
       <div style={{ backgroundColor: "#f2f2f2" }}>
@@ -30,8 +29,8 @@ const Services = () => {
                ></p>
             </div>
             <div id="services" className="row row-cols-1 row-cols-md-3 g-4">
-               {services.map((item) => (
-                  <Service key={item?._id} services={item}></Service>
+               {places.map((place) => (
+                  <Plan key={place?._id} places={place}></Plan>
                ))}
             </div>
          </div>
@@ -39,4 +38,4 @@ const Services = () => {
    );
 };
 
-export default Services;
+export default Plans;
