@@ -1,12 +1,30 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Modal } from "react-bootstrap";
 import { useParams } from "react-router";
 import Header from "../../../Shared/Header";
+import { useForm } from "react-hook-form";
+import useFirebase from "../../../hooks/useFirebase";
 
 const SinglePlanDetail = () => {
+   const { user } = useFirebase();
    const [singleItem, setSingleItem] = useState([]);
    const { planId } = useParams();
+   const [show, setShow] = useState(false);
+
+   const handleClose = () => setShow(false);
+   const handleShow = () => setShow(true);
+
+   const {
+      register,
+      handleSubmit,
+      watch,
+      formState: { errors },
+   } = useForm();
+   const onSubmit = (data) => {
+      console.log(data);
+   };
+
    console.log(singleItem);
    useEffect(() => {
       fetch(`https://vast-depths-37710.herokuapp.com/plan/${planId}`)
@@ -16,13 +34,18 @@ const SinglePlanDetail = () => {
    return (
       <div>
          <Header></Header>
+         <h1
+            className="my-3"
+            style={{
+               color: "#478ac9",
+            }}
+         >
+            See Your Plan
+         </h1>
          {/* Single Item Info */}
          <div className="row">
-            <div className="col-lg-8">
-               <div
-                  className="card mb-3 my-5 container"
-                  style={{ maxWidth: "840px" }}
-               >
+            <div className=" col-lg-8 container">
+               <div className="card mb-3 my-5" style={{ maxWidth: "840px" }}>
                   <div className="row g-0 ">
                      <div className="col-md-4">
                         <img
@@ -46,6 +69,130 @@ const SinglePlanDetail = () => {
                            <p className="card-text">
                               <h3> Price: ${singleItem?.price} </h3>
                            </p>
+                           {/* Place Order */}
+                           <div>
+                              <Button variant="primary" onClick={handleShow}>
+                                 Place Order
+                              </Button>
+
+                              <Modal
+                                 show={show}
+                                 onHide={handleClose}
+                                 backdrop="static"
+                                 keyboard={false}
+                              >
+                                 <Modal.Header closeButton>
+                                    <Modal.Title>
+                                       Give Your Information
+                                    </Modal.Title>
+                                 </Modal.Header>
+                                 <Modal.Body className="text-center">
+                                    <form onSubmit={handleSubmit(onSubmit)}>
+                                       {/* register your input into the hook by invoking the "register" function */}
+                                       <p>
+                                          Name:{" "}
+                                          <input
+                                             className="p-2 m-2 w-100"
+                                             defaultValue={user?.displayName}
+                                             placeholder="Your Name"
+                                             {...register("name")}
+                                          />
+                                       </p>
+                                       {/* include validation with required or other standard HTML validation rules */}
+                                       <p>
+                                          Email:{" "}
+                                          <input
+                                             className="p-2 m-2 w-100"
+                                             placeholder="Your Email"
+                                             defaultValue={user?.email}
+                                             {...register("email", {
+                                                required: true,
+                                             })}
+                                          />{" "}
+                                       </p>
+                                       <p>
+                                          Address:{" "}
+                                          <input
+                                             className="p-2 m-2 w-100"
+                                             placeholder="Your Address"
+                                             defaultValue=""
+                                             {...register("address", {
+                                                required: true,
+                                             })}
+                                          />{" "}
+                                       </p>
+                                       <p>
+                                          Destination:{" "}
+                                          <input
+                                             className="p-2 m-2 w-100"
+                                             placeholder="Your Destination"
+                                             defaultValue={singleItem?.name}
+                                             {...register("destination", {
+                                                required: true,
+                                             })}
+                                          />{" "}
+                                       </p>
+                                       <p>
+                                          {" "}
+                                          Travel Data:
+                                          <input
+                                             {...register("date")}
+                                             placeholder="data"
+                                             type="date"
+                                             className="p-2 m-2 w-100"
+                                          />
+                                       </p>
+                                       <p>
+                                          Price:{" "}
+                                          <input
+                                             className="p-2 m-2 w-100"
+                                             placeholder="Price"
+                                             defaultValue={singleItem?.price}
+                                             {...register("price", {
+                                                required: true,
+                                             })}
+                                          />{" "}
+                                       </p>
+                                       <p>
+                                          Person:
+                                          <select
+                                             {...register("person")}
+                                             className="p-2 m-2 w-100"
+                                          >
+                                             <option value="1">1</option>
+                                             <option value="2">2</option>
+                                             <option value="3">3</option>
+                                             <option value="4">4</option>
+                                             <option value="5">5</option>
+                                          </select>
+                                       </p>
+                                       {/* errors will return when field validation fails  */}
+
+                                       {errors.email && (
+                                          <span>This field is required</span>
+                                       )}
+
+                                       <p>
+                                          <input
+                                             className="btn btn-primary"
+                                             type="submit"
+                                          />
+                                       </p>
+                                    </form>
+                                 </Modal.Body>
+                                 <Modal.Footer>
+                                    <Button
+                                       variant="secondary"
+                                       onClick={handleClose}
+                                    >
+                                       Close
+                                    </Button>
+                                    {/* <Button variant="primary">
+                                       Confirm Order
+                                    </Button> */}
+                                 </Modal.Footer>
+                              </Modal>
+                           </div>
                         </div>
                      </div>
                   </div>
