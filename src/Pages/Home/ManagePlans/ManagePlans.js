@@ -13,24 +13,33 @@ const ManagePlans = () => {
    }, [control]);
 
    const handleDelete = (id) => {
-      fetch(`https://vast-depths-37710.herokuapp.com/deleteplan/${id}`, {
-         method: "DELETE",
-         headers: { "content-type": "application/json" },
-      })
-         .then((res) => res.json())
-         .then((data) => {
-            if (data.deletedCount) {
-               setConrol(!control);
-               swal(
-                  "Good job!",
-                  "You have sucessfully Deleted your plan!",
-                  "success"
-               );
-            } else {
-               setConrol(false);
-            }
-         });
-      console.log(id);
+      swal({
+         title: "Are you sure?",
+         text: "Once deleted, you will not be able to recover this selected file!",
+         icon: "warning",
+         buttons: true,
+         dangerMode: true,
+      }).then((willDelete) => {
+         if (willDelete) {
+            fetch(`https://vast-depths-37710.herokuapp.com/deleteplan/${id}`, {
+               method: "DELETE",
+               headers: { "content-type": "application/json" },
+            })
+               .then((res) => res.json())
+               .then((data) => {
+                  if (data.deletedCount) {
+                     setConrol(!control);
+                     swal("Poof! Your selected file has been deleted!", {
+                        icon: "success",
+                     });
+                  } else {
+                     setConrol(false);
+                  }
+               });
+         } else {
+            swal("Your selected file is safe!");
+         }
+      });
    };
    return (
       <div>
@@ -45,7 +54,7 @@ const ManagePlans = () => {
          </h1>
          {/* Showing All Plans */}
          <div className="container">
-            <Table striped bordered hover>
+            <Table striped bordered hover responsive>
                <thead>
                   <tr>
                      <th>#</th>
