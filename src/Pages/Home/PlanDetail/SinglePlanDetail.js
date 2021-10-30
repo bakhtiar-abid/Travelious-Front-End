@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import swal from "sweetalert";
+
 import { useEffect } from "react";
+import axios from "axios";
 import { Button, Card, Modal } from "react-bootstrap";
 import { useParams } from "react-router";
 import Header from "../../../Shared/Header";
@@ -18,11 +21,26 @@ const SinglePlanDetail = () => {
    const {
       register,
       handleSubmit,
+      reset,
       watch,
       formState: { errors },
    } = useForm();
    const onSubmit = (data) => {
+      data.status = "pending";
+      axios
+         .post("https://vast-depths-37710.herokuapp.com/orders", data)
+         .then((res) => {
+            if (res.data.insertedId) {
+               swal(
+                  "Good job!",
+                  "You have sucessfully added your plan!",
+                  "success"
+               );
+               reset();
+            }
+         });
       console.log(data);
+      reset();
    };
 
    console.log(singleItem);
@@ -35,7 +53,7 @@ const SinglePlanDetail = () => {
       <div>
          <Header></Header>
          <h1
-            className="my-3"
+            className="my-3 text-center"
             style={{
                color: "#478ac9",
             }}
@@ -43,9 +61,9 @@ const SinglePlanDetail = () => {
             See Your Plan
          </h1>
          {/* Single Item Info */}
-         <div className="row">
-            <div className=" col-lg-8 container">
-               <div className="card mb-3 my-5" style={{ maxWidth: "840px" }}>
+         <div>
+            <div className="d-flex justify-content-center align-content-center">
+               <div className="card mb-3 my-5" style={{ maxWidth: "1000px" }}>
                   <div className="row g-0 ">
                      <div className="col-md-4">
                         <img
@@ -122,6 +140,17 @@ const SinglePlanDetail = () => {
                                           />{" "}
                                        </p>
                                        <p>
+                                          Phone:{" "}
+                                          <input
+                                             className="p-2 m-2 w-100"
+                                             placeholder="Your Phone"
+                                             defaultValue=""
+                                             {...register("phone", {
+                                                required: true,
+                                             })}
+                                          />{" "}
+                                       </p>
+                                       <p>
                                           Destination:{" "}
                                           <input
                                              className="p-2 m-2 w-100"
@@ -134,9 +163,11 @@ const SinglePlanDetail = () => {
                                        </p>
                                        <p>
                                           {" "}
-                                          Travel Data:
+                                          Travel Date:
                                           <input
-                                             {...register("date")}
+                                             {...register("date", {
+                                                required: true,
+                                             })}
                                              placeholder="data"
                                              type="date"
                                              className="p-2 m-2 w-100"
