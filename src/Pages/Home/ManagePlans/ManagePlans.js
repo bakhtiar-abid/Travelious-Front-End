@@ -70,7 +70,7 @@ const ManagePlans = () => {
                         <td>{pd?.phone}</td>
                         <td>{pd?.destination}</td>
                         <td>{pd?.date}</td>
-                        <td>{pd?.price}</td>
+                        <td>${pd?.price}</td>
                         <td>{pd?.person}</td>
                         <td>{pd?.status}</td>
                         <button
