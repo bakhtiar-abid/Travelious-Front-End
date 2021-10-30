@@ -1,25 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import useAuth from "../../../hooks/useAuth";
+
 import Plan from "../Plan/Plan";
 
 const Plans = () => {
    const [places, setPlaces] = useState([]);
-   const { isLoading } = useAuth();
+   const [isLoading, setIsLoading] = useState(true);
+
    useEffect(() => {
+      setIsLoading(true);
       fetch("https://vast-depths-37710.herokuapp.com/allplans")
          .then((res) => res.json())
-         .then((data) => setPlaces(data));
+         .then((data) => {
+            setPlaces(data);
+            setIsLoading(false);
+         });
    }, []);
 
-   if (isLoading) {
-      return (
-         <div className="text-center">
-            {" "}
-            <Spinner animation="border" variant="danger" />
-         </div>
-      );
-   }
    return (
       <div style={{ backgroundColor: "#f2f2f2" }}>
          <div className="container py-5">
@@ -39,7 +37,15 @@ const Plans = () => {
                   }}
                ></p>
             </div>
-            <div id="services" className="row row-cols-1 row-cols-md-3 g-4">
+            {isLoading ? (
+               <div className="">
+                  {" "}
+                  <Spinner animation="border" variant="danger" />
+               </div>
+            ) : (
+               ""
+            )}
+            <div id="services" className="row row-cols-2 row-cols-md-3 g-4">
                {places?.map((place) => (
                   <Plan key={place?._id} places={place}></Plan>
                ))}
