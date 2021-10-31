@@ -5,7 +5,7 @@ const Footer = () => {
       <div className="py-5" style={{ backgroundColor: "#292e33" }}>
          <div className="container">
             <div className="row">
-               <div className="col-lg-4 col-md-4 ">
+               <div className="col-lg-4 col-md-4 col-sm-6">
                   <h2 className="text-white">Browse Tours By Activity</h2>
                   <p className="py-1  ">
                      <a className="text-decoration-none text-white" href="">
@@ -28,7 +28,7 @@ const Footer = () => {
                      </a>
                   </p>
                </div>
-               <div className="col-lg-4 py-5 col-md-4">
+               <div className="col-lg-4 py-5 col-md-4 col-sm-6">
                   <p className="py-1 ">
                      <a className="text-decoration-none text-white" href="">
                         City Tours

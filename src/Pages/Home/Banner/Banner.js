@@ -89,7 +89,7 @@ const Banner = () => {
          <section className="container">
             <div className="row">
                <div
-                  className="col-lg-4 col-md-4 col-12 text-white"
+                  className="col-lg-4 col-sm-12 col-12 text-white"
                   style={{ marginTop: "250px" }}
                >
                   <h1 style={{ fontSize: "60px" }}>Travelious</h1>
