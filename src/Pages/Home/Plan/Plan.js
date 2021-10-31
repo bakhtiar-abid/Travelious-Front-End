@@ -16,7 +16,7 @@ const Plan = ({ places }) => {
                <div className="py-2">
                   <div>
                      <Link to={`/plan/${_id}`}>
-                        <Button className="btn btn-warning">Book Now </Button>
+                        <Button className="btn btn-warning ">Book Now </Button>
                      </Link>
                   </div>
                </div>

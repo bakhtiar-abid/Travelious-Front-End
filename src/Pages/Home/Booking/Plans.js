@@ -20,7 +20,7 @@ const Plans = () => {
 
    return (
       <div style={{ backgroundColor: "#f2f2f2" }}>
-         <div className="container py-5">
+         <div className="container py-5 text-center">
             <h2
                style={{
                   color: "#478ac9",

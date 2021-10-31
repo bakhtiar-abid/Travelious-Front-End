@@ -8,6 +8,7 @@ import MyPlans from "./Pages/Home/MyPlans/MyPlans";
 import ManagePlans from "./Pages/Home/ManagePlans/ManagePlans";
 import AddPlan from "./Pages/Home/AddAPlan/AddPlan";
 import SinglePlanDetail from "./Pages/Home/PlanDetail/SinglePlanDetail";
+import Footer from "./Shared/Footer";
 
 function App() {
    return (
@@ -43,7 +44,7 @@ function App() {
                      <NotFound></NotFound>
                   </Route> */}
                </Switch>
-               {/* <Footer></Footer> */}
+               <Footer></Footer>
             </Router>
          </AuthProvider>
       </div>
