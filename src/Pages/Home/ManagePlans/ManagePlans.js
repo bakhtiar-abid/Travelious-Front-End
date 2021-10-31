@@ -70,14 +70,16 @@ const ManagePlans = () => {
    return (
       <div>
          <Header></Header>
-         <h1
-            className="my-3"
-            style={{
-               color: "#478ac9",
-            }}
-         >
-            Manage Plans
-         </h1>
+         <div className="text-center">
+            <h1
+               className="my-3"
+               style={{
+                  color: "#478ac9",
+               }}
+            >
+               Manage Plans
+            </h1>
+         </div>
          {/* Showing All Plans */}
          <div className="container">
             <Table striped bordered hover responsive>
