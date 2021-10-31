@@ -37,6 +37,7 @@ const Plans = () => {
                   }}
                ></p>
             </div>
+
             {isLoading ? (
                <div className="">
                   {" "}
