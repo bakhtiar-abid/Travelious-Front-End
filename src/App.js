@@ -9,6 +9,7 @@ import ManagePlans from "./Pages/Home/ManagePlans/ManagePlans";
 import AddPlan from "./Pages/Home/AddAPlan/AddPlan";
 import SinglePlanDetail from "./Pages/Home/PlanDetail/SinglePlanDetail";
 import Footer from "./Shared/Footer";
+import NotFound from "./Pages/Home/NotFound/NotFound";
 
 function App() {
    return (
@@ -40,9 +41,9 @@ function App() {
                   <PrivateRoute path="/plan/:planId">
                      <SinglePlanDetail></SinglePlanDetail>
                   </PrivateRoute>
-                  {/* <Route path="*">
+                  <Route path="*">
                      <NotFound></NotFound>
-                  </Route> */}
+                  </Route>
                </Switch>
                <Footer></Footer>
             </Router>
