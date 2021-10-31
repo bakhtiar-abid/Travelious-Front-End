@@ -57,7 +57,7 @@ const AddPlan = () => {
                <form onSubmit={handleAddUser}>
                   <p>
                      {" "}
-                     Destination
+                     Place:
                      <input
                         className="ms-2 w-50"
                         type="text"
@@ -79,7 +79,7 @@ const AddPlan = () => {
                      ></textarea>
                   </p>
                   <p>
-                     Price:
+                     Price :
                      <input
                         className="ms-2 w-50"
                         type="number"
@@ -91,13 +91,14 @@ const AddPlan = () => {
                   </p>
 
                   <p>
-                     Img Link:
+                     Img :
                      <input
-                        className="w-50"
+                        className="ms-2 w-50"
                         type="text"
                         name=""
                         id=""
                         ref={fileRef}
+                        placeholder="Insert Image Link"
                      />
                   </p>
 

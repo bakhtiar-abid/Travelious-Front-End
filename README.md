@@ -11,7 +11,7 @@
 -  This website contains the information about the travel agencey service.
 -  Login system with firebase, private routes and dashboard for admins and users .
 -  Users can book services, see their orderlist as well as all other orders.
--  Users can add services, update and delete services.
+-  Users can update and delete services.
 -  Users can add a new service and can change the status of orderlist.
 
 ### Front-end Technology :
@@ -26,7 +26,3 @@
 -  **Node**
 -  **Express**
 -  **MongoDB**
-
-<hr/>
-
-<hr/>
