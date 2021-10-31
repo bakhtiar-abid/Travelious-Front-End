@@ -1,0 +1,38 @@
+.discount {
+   background-image: url("../../../images/discount.jpeg");
+   height: 60vh;
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   position: relative;
+}
+
+.discount-detail {
+   font-weight: 400;
+   font-size: 75px;
+}
+
+/* .discount-text p {
+   white-space: nowrap;
+   overflow: hidden;
+} */
+/* Making it as responsive */
+
+@media only screen and (max-width: 688px) {
+   .discount-detail {
+      font-weight: 100;
+      font-size: 50px;
+   }
+   .discount-text p {
+      font-size: 13px !important;
+   }
+}
+@media only screen and (min-width: 689px) and (max-width: 991px) {
+   .discount-detail {
+      font-weight: 100;
+      font-size: 50px;
+   }
+   .discount-text p {
+      font-size: 22px !important;
+   }
+}
