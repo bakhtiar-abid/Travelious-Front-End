@@ -1,0 +1,15 @@
+.add-plan {
+   background-image: url("../../../images/add-plan.jpg");
+   height: 100vh;
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   position: relative;
+}
+
+.add-plan-form {
+   width: 600px;
+   height: 400px;
+   background-color: rgba(245, 245, 245, 0.912);
+   border-radius: 10px;
+}

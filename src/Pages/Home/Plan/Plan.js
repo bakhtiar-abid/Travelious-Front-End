@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Plan = ({ places }) => {
-   const { _id, name, description, price, img } = places;
+   const { _id, name, description, img } = places;
    return (
       <div>
          <div className="col">
