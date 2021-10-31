@@ -6,9 +6,7 @@
 
 ## About & Features
 
-**Travelious** is a full-stack travel agent service provider web app.
-
--  This website contains the information about the travel agencey service.
+-  **Travelious** is a full-stack travel agent service provider web app.
 -  Login system with firebase, private routes and dashboard for admins and users .
 -  Users can book services, see their orderlist as well as all other orders.
 -  Users can update and delete services.
