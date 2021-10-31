@@ -1,11 +1,10 @@
 import React, { useRef, useState } from "react";
 import Header from "../../../Shared/Header";
-import { useForm } from "react-hook-form";
+
 import "./AddPlan.css";
+import swal from "sweetalert";
 
 const AddPlan = () => {
-   const [image, setImage] = useState([]);
-
    const nameRef = useRef();
    const detailRef = useRef();
    const priceRef = useRef();
@@ -19,7 +18,7 @@ const AddPlan = () => {
       const newPlan = { name, description, price, img };
       console.log(newPlan);
 
-      fetch("http://localhost:3001/addplan", {
+      fetch("https://vast-depths-37710.herokuapp.com/addplan", {
          method: "POST",
          headers: {
             "content-type": "application/json",
@@ -29,35 +28,17 @@ const AddPlan = () => {
          .then((res) => res.json())
          .then((data) => {
             if (data.insertedId) {
-               alert("Successfully added the user.");
+               swal(
+                  "Added!",
+                  "You have sucessfully added your plan!",
+                  "success"
+               );
                e.target.reset();
             }
          });
       e.preventDefault();
    };
 
-   // const {
-   //    register,
-   //    handleSubmit,
-   //    reset,
-   //    watch,
-   //    formState: { errors },
-   // } = useForm();
-   // const handleAddUser = (e) => {
-   // data.status = "pending";
-   // axios
-   //    .post("https://vast-depths-37710.herokuapp.com/orders", data)
-   //    .then((res) => {
-   //       if (res.data.insertedId) {
-   //          swal(
-   //             "Booked!",
-   //             "You have sucessfully added your plan!",
-   //             "success"
-   //          );
-   //          reset();
-   //       }
-   //    });
-   // };
    return (
       <div>
          <Header></Header>
