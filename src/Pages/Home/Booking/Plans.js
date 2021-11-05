@@ -3,6 +3,7 @@ import { Spinner } from "react-bootstrap";
 import useAuth from "../../../hooks/useAuth";
 
 import Plan from "../Plan/Plan";
+import SkeletonCard from "../SkeletonCard/SkeletonCard";
 
 const Plans = () => {
    const [places, setPlaces] = useState([]);
@@ -46,13 +47,15 @@ const Plans = () => {
             ) : (
                ""
             )}
+            {isLoading && <SkeletonCard />}
             <div
                id="services"
                className="row row-cols-1 row-cols-md-3  row-cols-sm-2 g-4"
             >
-               {places?.map((place) => (
-                  <Plan key={place?._id} places={place}></Plan>
-               ))}
+               {!isLoading &&
+                  places?.map((place) => (
+                     <Plan key={place?._id} places={place}></Plan>
+                  ))}
             </div>
          </div>
       </div>

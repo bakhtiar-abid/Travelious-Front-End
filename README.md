@@ -1,8 +1,6 @@
 # **Travelious**
 
-### `Website Link :` [https://travelious-react.web.app/](https://travelious-react.web.app)
-
-**[Back-end Repository](https://github.com/programming-hero-web-course1/tourism-or-delivery-website-server-side-bakhtiarabid)**
+[![enter image description here](https://i.ibb.co/Lkh1cXT/image-1.png)](https://travelious-react.web.app/)
 
 ## About & Features
 
@@ -24,3 +22,5 @@
 -  **Node**
 -  **Express**
 -  **MongoDB**
+
+**[Back-end Repository](https://github.com/bakhtiarabid/Travelious-Backend)**
