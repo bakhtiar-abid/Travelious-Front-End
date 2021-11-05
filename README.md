@@ -22,5 +22,6 @@
 -  **Node**
 -  **Express**
 -  **MongoDB**
+-  **Heroku**
 
 **[Back-end Repository](https://github.com/bakhtiarabid/Travelious-Backend)**
