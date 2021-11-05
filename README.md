@@ -1,4 +1,4 @@
-# **Travelious**
+# Travelious
 
 [![enter image description here](https://i.ibb.co/Lkh1cXT/image-1.png)](https://travelious-react.web.app/)
 
