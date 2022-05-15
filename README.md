@@ -1,7 +1,7 @@
 # Travelious
 
 
-<a  href="https://travelious-react.web.app/"><img  width="100%"  height="100%"  src="https://i.ibb.co/1m0fPgv/Screenshot-1.png"></a>
+<a  href="https://travelious-react.web.app/"><img  width="50%"  height="50%"  src="https://i.ibb.co/1m0fPgv/Screenshot-1.png"></a>
 
 ## About & Features
 
