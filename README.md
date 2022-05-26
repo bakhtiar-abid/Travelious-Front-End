@@ -2,7 +2,7 @@
 
 
 <a  href="https://travelious-react.web.app/">
-<img  width="100%"  height="100%"  src="https://i.ibb.co/1m0fPgv/Screenshot-1.png"/>
+<img  width="100%"  height="100%"  src="https://i.ibb.co/WysGPcF/rsz-1screenshot-1.png"/>
 </a>
 
 ## About & Features
