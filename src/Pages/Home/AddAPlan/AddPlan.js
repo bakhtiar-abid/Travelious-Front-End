@@ -1,8 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import Header from "../../../Shared/Header";
 
-import "./AddPlan.css";
 import swal from "sweetalert";
+import "./AddPlan.css";
 
 const AddPlan = () => {
    const nameRef = useRef();
@@ -18,7 +18,7 @@ const AddPlan = () => {
       const newPlan = { name, description, price, img };
       console.log(newPlan);
 
-      fetch("https://vast-depths-37710.herokuapp.com/addplan", {
+      fetch("https://backend-travelious.onrender.com/addplan", {
          method: "POST",
          headers: {
             "content-type": "application/json",

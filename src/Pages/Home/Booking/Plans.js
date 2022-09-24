@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
-import useAuth from "../../../hooks/useAuth";
 
 import Plan from "../Plan/Plan";
 import SkeletonCard from "../SkeletonCard/SkeletonCard";
@@ -11,7 +10,7 @@ const Plans = () => {
 
    useEffect(() => {
       setIsLoading(true);
-      fetch("https://vast-depths-37710.herokuapp.com/allplans")
+      fetch("https://backend-travelious.onrender.com/allplans")
          .then((res) => res.json())
          .then((data) => {
             setPlaces(data);

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import swal from "sweetalert";
 
-import { useEffect } from "react";
 import axios from "axios";
-import { Button, Card, Modal } from "react-bootstrap";
-import { useParams } from "react-router";
-import Header from "../../../Shared/Header";
+import { useEffect } from "react";
+import { Button, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useParams } from "react-router";
 import useFirebase from "../../../hooks/useFirebase";
+import Header from "../../../Shared/Header";
 
 const SinglePlanDetail = () => {
    const { user } = useFirebase();
@@ -28,7 +28,7 @@ const SinglePlanDetail = () => {
    const onSubmit = (data) => {
       data.status = "pending";
       axios
-         .post("https://vast-depths-37710.herokuapp.com/orders", data)
+         .post("https://backend-travelious.onrender.com/orders", data)
          .then((res) => {
             if (res.data.insertedId) {
                swal(
@@ -45,7 +45,7 @@ const SinglePlanDetail = () => {
 
    // console.log(singleItem);
    useEffect(() => {
-      fetch(`https://vast-depths-37710.herokuapp.com/plan/${planId}`)
+      fetch(`https://backend-travelious.onrender.com/plan/${planId}`)
          .then((res) => res.json())
          .then((data) => setSingleItem(data));
    }, []);
