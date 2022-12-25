@@ -10,7 +10,7 @@ const MyPlans = () => {
    const [control, setConrol] = useState(false);
 
    useEffect(() => {
-      fetch(`https://backend-travelious.onrender.com/myplans/${user?.email}`)
+      fetch(`https://vast-depths-37710.herokuapp.com/myplans/${user?.email}`)
          .then((res) => res.json())
          .then((data) => setmyPlans(data));
    }, [user.email, control]);
@@ -24,7 +24,7 @@ const MyPlans = () => {
          dangerMode: true,
       }).then((willDelete) => {
          if (willDelete) {
-            fetch(`https://backend-travelious.onrender.com/deleteplan/${id}`, {
+            fetch(`https://vast-depths-37710.herokuapp.com/deleteplan/${id}`, {
                method: "DELETE",
                headers: { "content-type": "application/json" },
             })

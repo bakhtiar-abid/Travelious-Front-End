@@ -18,7 +18,7 @@ const AddPlan = () => {
       const newPlan = { name, description, price, img };
       console.log(newPlan);
 
-      fetch("https://backend-travelious.onrender.com/addplan", {
+      fetch("https://vast-depths-37710.herokuapp.com/addplan", {
          method: "POST",
          headers: {
             "content-type": "application/json",

@@ -10,7 +10,7 @@ const Plans = () => {
 
    useEffect(() => {
       setIsLoading(true);
-      fetch("https://backend-travelious.onrender.com/allplans")
+      fetch("https://vast-depths-37710.herokuapp.com/allplans")
          .then((res) => res.json())
          .then((data) => {
             setPlaces(data);

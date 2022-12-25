@@ -10,13 +10,13 @@ const ManagePlans = () => {
    const [control, setConrol] = useState(false);
 
    useEffect(() => {
-      fetch("https://backend-travelious.onrender.com/manageplans")
+      fetch("https://vast-depths-37710.herokuapp.com/manageplans")
          .then((res) => res.json())
          .then((data) => setPlans(data));
    }, [control]);
 
    const handleUpdate = (id) => {
-      const url = `https://backend-travelious.onrender.com/manageplans/${id}`;
+      const url = `https://vast-depths-37710.herokuapp.com/manageplans/${id}`;
 
       fetch(url, {
          method: "PUT",
@@ -45,7 +45,7 @@ const ManagePlans = () => {
          dangerMode: true,
       }).then((willDelete) => {
          if (willDelete) {
-            fetch(`https://backend-travelious.onrender.com/deleteplan/${id}`, {
+            fetch(`https://vast-depths-37710.herokuapp.com/deleteplan/${id}`, {
                method: "DELETE",
                headers: { "content-type": "application/json" },
             })

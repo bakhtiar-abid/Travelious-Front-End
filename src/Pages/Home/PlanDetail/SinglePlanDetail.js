@@ -28,7 +28,7 @@ const SinglePlanDetail = () => {
    const onSubmit = (data) => {
       data.status = "pending";
       axios
-         .post("https://backend-travelious.onrender.com/orders", data)
+         .post("https://vast-depths-37710.herokuapp.com/orders", data)
          .then((res) => {
             if (res.data.insertedId) {
                swal(
@@ -45,7 +45,7 @@ const SinglePlanDetail = () => {
 
    // console.log(singleItem);
    useEffect(() => {
-      fetch(`https://backend-travelious.onrender.com/plan/${planId}`)
+      fetch(`https://vast-depths-37710.herokuapp.com/plan/${planId}`)
          .then((res) => res.json())
          .then((data) => setSingleItem(data));
    }, []);
